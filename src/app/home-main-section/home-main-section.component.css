@@ -1,0 +1,45 @@
+h1{
+    color: #6A2C70;
+    font-size: 4rem;
+}
+
+h3{
+    color:#B83B5E;
+}
+
+.getquote{
+    border: none;
+    background-color: #F9ED69;
+    height: 50px;
+    width: 300px;
+    padding: 15px;
+    margin-right: 20px;
+    border-radius: 8px;
+}
+
+.getquotebtn{
+    padding: 15px;
+    margin-right: 20px;
+    border-radius: 8px;
+    font-weight: 900;
+    color: #F08A5D;
+    background-color: white;
+    border: medium solid #F08A5D;
+    box-shadow: 1px 1px 5px rgba(128, 128, 128, 0.589);
+}
+
+.options-primary{
+    height: 20vh;
+    background-color: #F08A5D;
+    font-size: 20px;
+    color: #F9ED69;
+    font-weight: bold;
+}
+
+.options-secondary{
+    height: 20vh;
+    background-color: #F9ED69;
+    font-size: 20px;
+    color: #F08A5D;
+    font-weight: bold;
+}

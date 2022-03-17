@@ -1,0 +1,76 @@
+<app-header></app-header>
+<div class="row">
+    <div class="col-md-12 wrapper d-flex justify-content-center align-items-center" style="height:95vh">
+        <div class="row d-flex justify-content-center align-items-center formwrapper card">
+            <form name="form" [formGroup] = "form" (ngSubmit) = "form.valid && onSubmit()">
+                <div class="col-md-12 mt-4 d-flex flex-row justify-content-center">
+                    <div class="m-1">
+                        <h2>Register</h2>
+                    </div>
+                </div>
+                <div class="col-md-12 d-flex flex-row justify-content-center">
+                    <div class="m-1">
+                        <input class="input form-control"  formControlName="email" [ngClass]="{ 'is-invalid':form.get('email').touched && form.get('email').invalid}" autocomplete="off" type="email" placeholder="Email">
+                        <div class="invalid-feedback">
+                            <div *ngIf="form.get('email').errors?.required">
+                                This field is mandatory to enter!
+                            </div>
+                            <div *ngIf="form.get('email').errors?.email">
+                                This field is mandatory to enter!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 d-flex flex-row justify-content-center">
+                    <div class="m-1">
+                        <input class="input form-control"  formControlName="fullname" [ngClass]="{ 'is-invalid':form.get('fullname').touched && form.get('fullname').invalid}" type="text" placeholder="Full Name">
+                        <div class="invalid-feedback">
+                            <div>
+                                This field is mandatory to enter!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 d-flex flex-row justify-content-center">
+                    <div class="m-1">
+                        <input class="input form-control"  formControlName="mobno" [ngClass]="{ 'is-invalid':form.get('mobno').touched && form.get('mobno').invalid}" type="text" placeholder="Mobile Number">
+                        <div class="invalid-feedback">
+                            <div>
+                                This field is mandatory to enter!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 d-flex flex-row justify-content-center">
+                    <div class="m-1">
+                        <input class="input form-control" formControlName="password" [ngClass]="{ 'is-invalid':form.get('password').touched && form.get('password').invalid }" type="password" placeholder="Password">
+                        <div class="invalid-feedback">
+                            <div>
+                                This field is mandatory to enter!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 d-flex flex-row justify-content-center">
+                    <div class="m-1">
+                        <input class="input form-control" type="Password" formControlName="confPassword" [ngClass]="{ 'is-invalid':form.get('confPassword').touched && form.get('confPassword').invalid }" formControlName="confPassword" placeholder="Confirm Password">
+                        <div class="invalid-feedback">
+                            <div *ngIf="form.get('confPassword').errors?.required">
+                                This field is mandatory to enter!
+                            </div>
+                            <div *ngIf="form.get('confPassword').errors?.isError">
+                                Both the passwords do not match! Please enter same password in both fields.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 mt-2 mb-5 d-flex flex-row justify-content-center">
+                    <div class="m-1 mt-4">
+                        <button class="button" type="reset">Reset Details</button>
+                        <button class="button" [disabled]="!form.valid">Register</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

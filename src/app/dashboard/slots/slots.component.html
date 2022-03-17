@@ -1,0 +1,53 @@
+<div class="row mt-3  justify-content-center">
+  <div class="col-md-11 card" >
+    <div class="row " style="background-color: #F08A5D;color: white;margin: 10px;padding: 10px;">
+      <div class="col-md-12 d-flex justify-content-center" >
+        <h2>Available Slots</h2>
+      </div>
+    </div>
+    <hr>
+    <div class="row mt-2">
+      <div class="col-md-12">
+        <div class="row mb-3">
+          <div class="col-md-12 overflow-auto" style="height: 35rem;">
+            <div>
+              <div *ngFor='let location of locations$' class="card">
+                <div class="card-header flex-row" >
+                  <div class="row">
+                    <div class="col-md-3">
+                      <h2><b>{{location.location_name}}</b></h2>
+                    </div>
+                    <div class="col-md-7">
+                      <h3><b>Total Slots :</b> {{location.slots}}</h3>
+                    </div>
+                  </div>
+                </div>             
+                <div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-auto mr-auto">
+                        <h4><b> Location Address:</b></h4> <p>{{location.area}}</p>
+                        <hr>
+                        <h4><b> Price Per Hour </b></h4>
+                        <div *ngFor='let vehicle of vehicles$'>
+                          <p>{{vehicle.vehicle_type}} : {{vehicle.cost}} Rs</p>
+                        </div>
+                      </div>
+                      
+                      <div class="col-auto">
+                        <button class="button" type="button" routerLink="/dashboard/bookslot/{{location.locationid}}">
+                          Book Now
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
